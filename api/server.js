@@ -11,7 +11,7 @@ app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 MongoDB = "mongodb+srv://durianhang:durianadmin@cluster0.vqcxcdk.mongodb.net/?retryWrites=true&w=majority"
 
-mongoose.connect(process.env.MONGODB_URI || MongoDB, {
+mongoose.connect(MongoDB, {
 	useNewUrlParser: true, 
 	useUnifiedTopology: true 
 }).then(() => console.log(`Connected to MongoDB on ${process.env.PORT || 3001}`)).catch(console.error);
@@ -19,10 +19,6 @@ mongoose.connect(process.env.MONGODB_URI || MongoDB, {
 // Models
 const BidItem = require('./models/Bid-Item');
 const Bidder = require('./models/Bidders');
-
-app.get("*", function (request, response) {
-	response.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
-  });
 
 app.get('/BidItems', async (req, res) => {
 	const item = await BidItem.find();
@@ -86,4 +82,4 @@ if (process.env.NODE_ENV === "production") {
 	app.use(express.static("client/build"))
 }
 
-app.listen(process.env.PORT || 3001);
+app.listen(3001);
