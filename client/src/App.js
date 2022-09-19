@@ -10,7 +10,7 @@ const api_base = "http://localhost:3001";
 function App() {
   const getBidItems = () => {
     axios
-      .get(api_base + "/BidItems")
+      .get(process.env.PORT || api_base + "/BidItems")
       .then((res) => res)
       .then((data) => setBidItems(data))
       .catch((err) => console.error("Error: ", err));

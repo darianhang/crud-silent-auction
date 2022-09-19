@@ -11,7 +11,7 @@ app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 MongoDB = "mongodb+srv://durianhang:durianadmin@cluster0.vqcxcdk.mongodb.net/?retryWrites=true&w=majority"
 
-mongoose.connect(MongoDB, {
+mongoose.connect(process.env.PORT || MongoDB, {
 	useNewUrlParser: true, 
 	useUnifiedTopology: true 
 }).then(() => console.log(`Connected to MongoDB on ${process.env.PORT || 3001}`)).catch(console.error);
@@ -82,4 +82,4 @@ if (process.env.NODE_ENV === "production") {
 	app.use(express.static("client/build"))
 }
 
-app.listen(3001);
+app.listen(process.env.PORT || 3001);
