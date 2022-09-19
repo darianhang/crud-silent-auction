@@ -9,7 +9,7 @@ app.use(cors());
 
 MongoDB = "mongodb+srv://durianhang:durianadmin@cluster0.vqcxcdk.mongodb.net/?retryWrites=true&w=majority"
 
-mongoose.connect(MongoDB, {
+mongoose.connect(process.env.MONGODB_URI || MongoDB, {
 	useNewUrlParser: true, 
 	useUnifiedTopology: true 
 }).then(() => console.log("Connected to MongoDB")).catch(console.error);
@@ -76,4 +76,8 @@ app.get('/todo/complete/:id', async (req, res) => {
 	res.json(todo);
 })
 
-app.listen(3001);
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static("client/build"))
+}
+
+app.listen(process.env.PORT || 3001);

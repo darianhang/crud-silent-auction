@@ -1,1 +1,17 @@
-{}
+{
+    "name": "gensler-silent-auction",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+      "build":"cd client && npm run build", 
+      "install-client": "cd client && npm install",
+      "heroku-postbuild": "npm run install-client && npm run build",
+      "start": "cd api && node server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "express-handlebars": "^3.1.0"
+    }
+  }
