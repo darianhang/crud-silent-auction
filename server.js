@@ -19,6 +19,10 @@ mongoose.connect(process.env.MONGODB_URL || MongoDB, {
 const BidItem = require('./models/Bid-Item');
 const Bidder = require('./models/Bidders');
 
+ app.get('/', function(req, res) {
+	res.sendFile('./client/build/index.html', { root: __dirname });
+ });
+
 app.get('/BidItems', async (req, res) => {
 	const item = await BidItem.find();
 	res.json(item);
