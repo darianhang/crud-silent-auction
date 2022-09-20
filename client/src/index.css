@@ -8,12 +8,6 @@
 body {
 	background-color: #DCDCDC;
 	margin: 0 auto;
-	min-height: 100vh;
-	height: -webkit-fill-available;
-}
-
-html {
-	height: -webkit-fill-available;
 }
 
 h2 {
@@ -92,8 +86,9 @@ h2 {
 .bid-modal {
 	z-index: 1;
 	position: fixed;
-	height: 95vh;
+	height: -webkit-fill-available;
 	width: 90vw;
+	margin: 5%;
 	background-color: white;
 	padding: 5%;
 	display: flex;
@@ -152,7 +147,7 @@ h2 {
 
 .modal-item-img {
 	width: 100%;
-	height: 30%;
+	height: 40%;
 	object-fit: cover;
 	border-radius: 8px;
 	margin-bottom: 5%;
@@ -220,11 +215,12 @@ p {
 }
 
 .splash {
-	width: 100%;
-	height: 100%;
+	overflow: hidden;
+	width: 150%;
+	height: 150%;
 	background-color: #FFFFFF;
 	display: flex;
-	position: absolute;
+	position: fixed;
 	justify-content: center	;
 	align-items: center;
 	top: 50%;
@@ -234,6 +230,6 @@ p {
 }
 
 .splash-img {
-	width: 50%;
+	width: 25%;
 	object-fit: contain;
 }
