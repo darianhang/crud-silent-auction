@@ -1,17 +1,20 @@
 {
-    "name": "gensler-silent-auction",
-    "version": "1.0.0",
-    "description": "",
-    "main": "app.js",
-    "scripts": {
-      "build":"cd client && npm run build", 
-      "install-client": "cd client && npm install",
-      "heroku-postbuild": "cd client && npm install && npm run build",
-      "start": "cd api && node server.js"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "express-handlebars": "^3.1.0"
-    }
+  "name": "gensler-silent-auction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run Build"
+  },
+  "author": "Darian Hang",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
   }
+}

@@ -1,17 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const path = require("path");
+const path = require('path');
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 MongoDB = "mongodb+srv://durianhang:durianadmin@cluster0.vqcxcdk.mongodb.net/?retryWrites=true&w=majority"
 
-mongoose.connect(process.env.PORT || MongoDB, {
+mongoose.connect(process.env.MONGODB_URL || MongoDB, {
 	useNewUrlParser: true, 
 	useUnifiedTopology: true 
 }).then(() => console.log(`Connected to MongoDB on ${process.env.PORT || 3001}`)).catch(console.error);
@@ -79,7 +78,11 @@ app.get('/todo/complete/:id', async (req, res) => {
 })
 
 if (process.env.NODE_ENV === "production") {
-	app.use(express.static("client/build"))
+	app.use(express.static("client/build/"))
+
+	app.get("*", (res, req) => {
+		res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+	})
 }
 
 app.listen(process.env.PORT || 3001);
