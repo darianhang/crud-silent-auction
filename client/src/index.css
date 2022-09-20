@@ -86,7 +86,7 @@ h2 {
 .bid-modal {
 	z-index: 1;
 	position: fixed;
-	height: -webkit-fill-available;
+	height: 85%;
 	width: 90vw;
 	margin: 5%;
 	background-color: white;
@@ -110,8 +110,6 @@ h2 {
 	background-color: rgba(128,128,128,0.5);
 	padding: 0;
 	margin: 0;
-	display:flex;
-	align-items: center;
 	justify-content: center;
 }
 
