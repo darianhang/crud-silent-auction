@@ -5,6 +5,7 @@ import ItemCard from "./components/item-card";
 import { BidModal, AnimatePresense } from "./components/bid-modal";
 import Splash from "./components/splash";
 import { motion, AnimatePresence } from "framer-motion"
+import NavBar from "./components/navbar"
 const api_base = "https://crud-silent-auction.herokuapp.com";
 
 function App() {
@@ -77,7 +78,8 @@ function App() {
 
   return (
     <div className="App">
-      <div>
+      <NavBar />
+      <div class="card-container">
         <AnimatePresence>
           {showSplash ? 
             <motion.div

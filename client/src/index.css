@@ -14,12 +14,27 @@ h2 {
 	font-size: 5.5vw;
 }
 
-.current-bid {
-	font-size: 4vw;
+.card-container {
+	padding-top: 30%;
 }
 
-.App {
-	padding: 30px;
+.nav-bar {
+	width: 100%;
+	padding: 5%;
+	display: flex;
+	justify-content: center;
+	background-color: #FFFFFF;
+	position: fixed;
+	z-index: 1;
+}
+
+.nav-img {
+	width: 20%;
+
+}
+
+.current-bid {
+	font-size: 4vw;
 }
 
 .card {
