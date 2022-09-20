@@ -78,7 +78,7 @@ h2 {
 	color: #FFFFFF;
 	border-radius: 8px;
 	padding: 10px;
-	font-size: 85%;
+	font-size: 80%;
 	font-weight: 700;
 	line-height: 1;
 	transition: transform 200ms,background 200ms;
@@ -88,10 +88,25 @@ h2 {
 	transform: translateY(-2px);
 }
 
+.modal-bg {
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(128,128,128,0.5);
+	padding: 0;
+	margin: 0;
+	display:flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
 .bid-modal {
 	z-index: 1;
 	position: fixed;
-	height: 95%;
+	height: 80%;
 	width: 90%;
 	background-color: white;
 	padding: 5%;
@@ -102,21 +117,7 @@ h2 {
 	border-radius: 8px;
 	justify-items: flex-end;
 	justify-content: space-between;
-}
-
-.modal-bg {
-	z-index: 1;
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	width: 100vw;
-	background-color: rgba(128,128,128,0.5);
-	padding: 0;
-	margin: 0;
-	display:flex;
-	align-items: center;
-	justify-content: center;
+	margin-top: 5%;
 }
 
 .modal-header-container {
@@ -151,7 +152,7 @@ h2 {
 
 .modal-item-img {
 	width: 100%;
-	height: 30%;
+	height: 40%;
 	object-fit: cover;
 	border-radius: 8px;
 	margin-bottom: 5%;
