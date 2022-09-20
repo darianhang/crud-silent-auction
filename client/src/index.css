@@ -5,9 +5,14 @@
 	margin: 0;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	background-color: #DCDCDC;
 	margin: 0 auto;
+	height: 100%;
 }
 
 h2 {
@@ -73,7 +78,7 @@ h2 {
 	color: #FFFFFF;
 	border-radius: 8px;
 	padding: 10px;
-	font-size: 90%;
+	font-size: 85%;
 	font-weight: 700;
 	line-height: 1;
 	transition: transform 200ms,background 200ms;
@@ -86,8 +91,8 @@ h2 {
 .bid-modal {
 	z-index: 1;
 	position: fixed;
-	height: 95vh;
-	width: 90vw;
+	height: 95%;
+	width: 90%;
 	background-color: white;
 	padding: 5%;
 	display: flex;
