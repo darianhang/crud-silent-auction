@@ -5,12 +5,12 @@ import ItemCard from "./components/item-card";
 import { BidModal, AnimatePresense } from "./components/bid-modal";
 import Splash from "./components/splash";
 import { motion, AnimatePresence } from "framer-motion"
-const api_base = "http://localhost:3001";
+const api_base = "https://gensler-silent-auction.herokuapp.com/";
 
 function App() {
   const getBidItems = () => {
     axios
-      .get(process.env.PORT || api_base + "/BidItems")
+      .get(api_base + "/BidItems")
       .then((res) => res)
       .then((data) => setBidItems(data))
       .catch((err) => console.error("Error: ", err));
