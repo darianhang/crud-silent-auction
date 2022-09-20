@@ -5,7 +5,7 @@ import ItemCard from "./components/item-card";
 import { BidModal, AnimatePresense } from "./components/bid-modal";
 import Splash from "./components/splash";
 import { motion, AnimatePresence } from "framer-motion"
-const api_base = "https://gensler-silent-auction.herokuapp.com/";
+const api_base = "https://gensler-silent-auction.herokuapp.com";
 
 function App() {
   const getBidItems = () => {
