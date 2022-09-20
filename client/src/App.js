@@ -5,9 +5,15 @@ import ItemCard from "./components/item-card";
 import { BidModal, AnimatePresense } from "./components/bid-modal";
 import Splash from "./components/splash";
 import { motion, AnimatePresence } from "framer-motion"
-const api_base = "https://gensler-silent-auction.herokuapp.com";
+const api_base = "http://localhost:3001";
 
 function App() {
+
+  const [bidItems, setBidItems] = useState(getBidItems);
+  const [showModal, setShowModal] = useState(false);
+  const [currentItem, setCurrentItem] = useState({});
+  const [showSplash, setShowSplash] = useState(true);
+
   const getBidItems = () => {
     axios
       .get(api_base + "/BidItems")
@@ -15,11 +21,6 @@ function App() {
       .then((data) => setBidItems(data))
       .catch((err) => console.error("Error: ", err));
   };
-
-  const [bidItems, setBidItems] = useState(getBidItems);
-  const [showModal, setShowModal] = useState(false);
-  const [currentItem, setCurrentItem] = useState({});
-  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
     getBidItems();
@@ -102,7 +103,6 @@ function App() {
             />
         {bidItems.data.map((items) => {
           return (
-            <div>
               <ItemCard
                 key={items._id}
                 itemName={items.itemName}
@@ -112,7 +112,6 @@ function App() {
                 img={items.img}
                 itemDescription={items.itemDescription}
               />
-            </div>
           );
         })}
       </div>

@@ -19,9 +19,7 @@ mongoose.connect(process.env.MONGODB_URL || MongoDB, {
 const BidItem = require('./models/Bid-Item');
 const Bidder = require('./models/Bidders');
 
- app.get('/', function(req, res) {
-	res.sendFile('./client/build/index.html', { root: __dirname });
- });
+app.get('/', (req, res) => { res.send('Hello from Express!'))
 
 app.get('/BidItems', async (req, res) => {
 	const item = await BidItem.find();
@@ -80,13 +78,5 @@ app.get('/todo/complete/:id', async (req, res) => {
 
 	res.json(todo);
 })
-
-if (process.env.NODE_ENV === "production") {
-	app.use(express.static("client/build/"))
-
-	app.get("*", (res, req) => {
-		res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
-	})
-}
-
+ 
 app.listen(process.env.PORT || 3001);
