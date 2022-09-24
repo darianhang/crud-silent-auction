@@ -2,12 +2,22 @@ import React from "react";
 
 export default function ItemCard({
   itemName,
-  currentBid,
+  currentBids,
   handleClick,
   id,
   img,
   itemDescription
 }) {
+
+  let currentBidAmount
+
+  try {
+    currentBidAmount = currentBids[currentBids.length - 1].bid
+  }
+
+  catch {
+    currentBidAmount = 0
+  }
 
   return (
     <div className="card">
@@ -15,13 +25,12 @@ export default function ItemCard({
       <div className="item-details">
         <div>
           <h2 className="item-name">{itemName}</h2>
-          <div className="current-bid">Current bid: ${currentBid}</div>
+          <div className="current-bid">Current bid: ${currentBidAmount}</div>
         </div>
-        <button className="button" onClick={() => handleClick(id, itemName, itemDescription, img, currentBid)}>
+        <button className="button" onClick={() => handleClick(id, itemName, itemDescription, img, currentBidAmount, currentBids)}>
           Open Listing
         </button>
       </div>
     </div>
   );
 }
- 

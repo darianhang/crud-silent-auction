@@ -17,7 +17,6 @@ mongoose.connect(process.env.MONGODB_URL || MongoDB, {
 
 // Models
 const BidItem = require('./models/Bid-Item');
-const Bidder = require('./models/Bidders');
 
 app.get('/', (req, res) => { res.send('Hello from Express!')})
 
@@ -26,29 +25,12 @@ app.get('/BidItems', async (req, res) => {
 	res.json(item);
 });
 
-app.get('/Bidders', async (req, res) => {
-	const bidders = await Bidder.find();
-	res.json(bidders);
-});
-
 app.post('/BidItems/new', (req, res) => {
 	const item = new BidItem({
 		itemName: req.body.itemName,
-		currentBid: req.body.currentBid,
 		img: req.body.img,
-		itemDescription: req.body.itemDescription
-	})
-
-	item.save();
-
-	res.json(item);
-});
-
-app.post('/Bidder/new', (req, res) => {
-	const item = new Bidder({
-		name: req.body.name,
-		bidAmount: req.body.bidAmount,
-		bidItem: req.body.bidItem,
+		itemDescription: req.body.itemDescription,
+		bids: req.body.bids,
 	})
 
 	item.save();
@@ -57,11 +39,13 @@ app.post('/Bidder/new', (req, res) => {
 });
 
 app.put('/BidItems/update/:id', async (req, res) => {
-	const bidAmount = await BidItem.findById(req.params.id);
-	bidAmount.currentBid = req.body.currentBid;
-	bidAmount.save();
-	res.json(bidAmount);
-});
+	await BidItem.updateOne({ _id: req.params.id },
+		{ $push: { bids: {name: req.body.bids.name,
+		bid: req.body.bids.bid}   } })
+		const updatedItem = await BidItem.findById(req.params.id);
+		return res.status(200).json(updatedItem);
+	})
+
 
 app.delete('/todo/delete/:id', async (req, res) => {
 	const result = await Todo.findByIdAndDelete(req.params.id);

@@ -6,7 +6,9 @@ import { BidModal, AnimatePresense } from "./components/bid-modal";
 import Splash from "./components/splash";
 import { motion, AnimatePresence } from "framer-motion"
 import NavBar from "./components/navbar"
-const api_base = "https://crud-silent-auction.herokuapp.com";
+import PropTypes from "prop-types"
+const api_base = "http://localhost:3001";
+// const api_base = "https://crud-silent-auction.herokuapp.com";
 
 function App() {
 
@@ -25,7 +27,7 @@ function App() {
 
   useEffect(() => {
     getBidItems();
-  }, []);
+  }, [bidItems]);
 
   function toggleScrollOn() {
     document.body.style.overflow = 'scroll'
@@ -36,40 +38,45 @@ function App() {
     document.body.style.overflow = 'hidden'
   }
 
-  const updatePrice = (updatedPrice, setBid) => {
-    const currentBid = bidItems.data.find((x) => x._id === currentItem.id).currentBid;
-    console.log(updatedPrice)
-    if (updatedPrice > currentBid) {
+  const placeBid = (bid, setBid, bidder, setBidder) => {
+    const currentBid = currentItem.currentBid;
+    if (bid > 1000) {
+      alert("Please enter an amount under $1000");
+      setBid("");
+    } else if (bid > currentBid) {
       axios
         .put(`${api_base}/BidItems/update/${currentItem.id}`, {
-          currentBid: updatedPrice,
+          bids: {name:bidder, bid:bid}
         })
-        .then((res) => res)
-        .then(setBid(""))
-        .then(closeModal)
-        .then(getBidItems)
+        .then(() => closeModal(setBid, setBidder))
+        .then(() => getBidItems())
         .catch((err) => console.error("Error: ", err));
     } else {
       alert("Please enter a higher amount than the current bid");
+      setBid("");
     }
   };
 
-  const closeModal = () => {
+  const closeModal = (setBid, setBidder) => {
     setShowModal(false)
     document.body.style.overflow = 'scroll'
+    setBid("")
+    setBidder("")
   }
 
-  const openModal = (id, itemName, itemDescription, img, currentBid) => {
+  const openModal = (id, itemName, itemDescription, img, currentBidAmount, currentBids) => {
+    console.log(bidItems.data[0].bids[0].bid)
     setShowModal(true);
     document.body.style.overflow = 'hidden'
+    const bids = currentBids.slice(0).reverse().map((x) => {return (<p key={x._id}>{x.name} - {x.bid}</p>)})
     setCurrentItem({
       id: id,
       itemName: itemName,
       itemDescription: itemDescription,
       img: img,
-      currentBid: currentBid
+      currentBid: currentBidAmount,
+      prevBidders: bids
     })
-    console.log(currentItem)
   };
 
   if (bidItems === undefined) {
@@ -79,41 +86,42 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <div class="card-container">
+      <div className="card-container">
         <AnimatePresence>
-          {showSplash ? 
+          {showSplash ?
             <motion.div
-            initial={{ opacity: 1}}
-            animate={{ opacity: 0}}
-            transition={{ delay: 1.5, duration: 1 }}
-            onAnimationStart={toggleScrollOff}
-            onAnimationComplete={toggleScrollOn}
-          >
-            <Splash />
-          </motion.div>
-          : ""}
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 0 }}
+              transition={{ delay: 1.5, duration: 1 }}
+              onAnimationStart={toggleScrollOff}
+              onAnimationComplete={toggleScrollOn}
+            >
+              <Splash />
+            </motion.div>
+            : ""}
         </AnimatePresence>
-            <BidModal
-              id={currentItem}
-              showModal={showModal}
-              handleClick={updatePrice}
-              itemName={currentItem.itemName}
-              itemDescription={currentItem.itemDescription}
-              img={currentItem.img}
-              currentBid={currentItem.currentBid}
-              handleClose={closeModal}
-            />
+        <BidModal
+          id={currentItem}
+          showModal={showModal}
+          handleClick={placeBid}
+          itemName={currentItem.itemName}
+          itemDescription={currentItem.itemDescription}
+          img={currentItem.img}
+          currentBid={currentItem.currentBid || 0}
+          handleClose={closeModal}
+          prevBidders={currentItem.prevBidders || ""}
+        />
         {bidItems.data.map((items) => {
           return (
-              <ItemCard
-                key={items._id}
-                itemName={items.itemName}
-                currentBid={items.currentBid}
-                handleClick={openModal}
-                id={items._id}
-                img={items.img}
-                itemDescription={items.itemDescription}
-              />
+            <ItemCard
+              key={items._id}
+              itemName={items.itemName}
+              currentBids={items.bids}
+              handleClick={openModal}
+              id={items._id}
+              img={items.img}
+              itemDescription={items.itemDescription}
+            />
           );
         })}
       </div>

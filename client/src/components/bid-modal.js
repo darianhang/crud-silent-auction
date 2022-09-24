@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion"
 
-export function BidModal({ handleClick, showModal, itemName, itemDescription, img, handleClose, currentBid }) {
+export function BidModal({ prevBidders, handleClick, showModal, itemName, itemDescription, img, handleClose, currentBid }) {
   const [bid, setBid] = useState("");
   const [bidder, setBidder] = useState("");
 
@@ -28,18 +28,22 @@ export function BidModal({ handleClick, showModal, itemName, itemDescription, im
             <header className="modal-header-container">
               <div className="modal-header">
                 <h1 className="modal-title">{itemName}</h1>
-                <div href="#" className="close" onClick={handleClose}></div>
+                <div href="#" className="close" onClick={() => {handleClose(setBid, setBidder)}}></div>
               </div>
               <div className="current-bid">Current bid: ${currentBid}</div>
             </header>
-            <body className="modal-body">
+            <div className="modal-body">
               <img className="modal-item-img" src={img}></img>
               <p>{itemDescription}</p>
-            </body>
+            </div>
+              <h3 className="bids-title">Previous bids:</h3>
+              <div className="bids">
+                {prevBidders}
+              </div>
             <footer className="modal-footer">
               <input className="modal-inputname" placeholder="Name" value={bidder} onChange={handleChangeBidder}></input>
               <input className="modal-inputbid" placeholder="$" value={bid} onChange={handleChangeBid}></input>
-              <button className="modal-btn" onClick={() => handleClick(bid, setBid)}>Place Bid</button>
+              <button className="modal-btn" onClick={() => handleClick(bid, setBid, bidder, setBidder)}>Place Bid</button>
             </footer>
             </motion.div>
         : ""}

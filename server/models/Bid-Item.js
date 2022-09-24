@@ -6,10 +6,6 @@ const bidItemSchema = new Schema({
 		type: String,
 		required: true
 	},
-	currentBid: {
-		type: Number,
-		default: 0
-	},
 	img: {
 		type: String,
 		required: true
@@ -18,10 +14,10 @@ const bidItemSchema = new Schema({
 		type: String,
 		required: true
 	},
-	timestamp: {
-		type: String,
-		default: Date.now()
-	}
+	bids: [{
+		name: String,
+		bid: Number
+	}]
 });
 
 const BidItem = mongoose.model("BidItem", bidItemSchema);

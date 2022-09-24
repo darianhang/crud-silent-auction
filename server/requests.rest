@@ -2,38 +2,37 @@ GET http://localhost:3001/todos HTTP/1.1
 
 ###
 
-POST http://localhost:3001/BidItems/new
+POST https://crud-silent-auction.herokuapp.com/BidItems/new
 Content-Type: application/json
 
 {
-	"itemName": "White Sneaker",
+	"itemName": "Rainbow Heads",
 	"currentBid": 0,
-	"img": "https://res.cloudinary.com/df5etts2d/image/upload/v1658149075/cld-sample-5.jpg",
+	"img": "https://res.cloudinary.com/df5etts2d/image/upload/v1663688298/leeann-cline-I2RnOO8ojQ4-unsplash_egh3sj.jpg",
 	"itemDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla est ullamcorper eget nulla facilisi etiam.\n\nQuis lectus nulla at volutpat diam ut venenatis tellus. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum. Tincidunt id aliquet risus feugiat. Tempus egestas sed sed risus. Sit amet purus gravida quis blandit turpis cursus.\n\nVel eros donec ac odio. Odio ut enim blandit volutpat maecenas. Gravida rutrum quisque non tellus. Tellus id interdum velit laoreet id donec ultrices tincidunt arcu. Egestas dui id ornare arcu odio ut sem nulla pharetra. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus."
 }
 
 ###
 
 
-POST http://localhost:3001/BidItems/new
+POST https://crud-silent-auction.herokuapp.com/BidItems/new
 Content-Type: application/json
 
 {
-	"itemName": "Ski Pass",
+	"itemName": "Some Pots",
 	"currentBid": 0,
-	"img": "https://res.cloudinary.com/df5etts2d/image/upload/v1658149074/cld-sample-2.jpg",
+	"img": "https://res.cloudinary.com/df5etts2d/image/upload/v1663688298/tom-crew-oiZAQvxTcYQ-unsplash_wd5kiv.jpg",
 	"itemDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla est ullamcorper eget nulla facilisi etiam.\n\nQuis lectus nulla at volutpat diam ut venenatis tellus. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum. Tincidunt id aliquet risus feugiat. Tempus egestas sed sed risus. Sit amet purus gravida quis blandit turpis cursus.\n\nVel eros donec ac odio. Odio ut enim blandit volutpat maecenas. Gravida rutrum quisque non tellus. Tellus id interdum velit laoreet id donec ultrices tincidunt arcu. Egestas dui id ornare arcu odio ut sem nulla pharetra. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus."
 }
 
 ###
 
-POST http://localhost:3001/BidItems/new
+POST http://localhost:3001/BidItems/new/
 Content-Type: application/json
 
 {
-	"itemName": "Cool Dog",
-	"currentBid": 0,
-	"img": "https://res.cloudinary.com/df5etts2d/image/upload/v1662581491/IT%20Updates/josh-rakower-zBsXaPEBSeI-unsplash_wbo1ss.jpg",
+	"itemName": "Mustard Hat 2",
+	"img": "https://res.cloudinary.com/df5etts2d/image/upload/v1663688608/red-hat-factory-Di1Xvfyokpc-unsplash_i3kiwz.jpg",
 	"itemDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla est ullamcorper eget nulla facilisi etiam.\n\nQuis lectus nulla at volutpat diam ut venenatis tellus. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum. Tincidunt id aliquet risus feugiat. Tempus egestas sed sed risus. Sit amet purus gravida quis blandit turpis cursus.\n\nVel eros donec ac odio. Odio ut enim blandit volutpat maecenas. Gravida rutrum quisque non tellus. Tellus id interdum velit laoreet id donec ultrices tincidunt arcu. Egestas dui id ornare arcu odio ut sem nulla pharetra. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus."
 }
 
@@ -58,9 +57,9 @@ GET http://localhost:3001/todo/complete/60e585d86177f95ff0574323
 
 ###
 
-PUT http://localhost:3001/BidItems/update/6328801ecc12383c87135cda
+PUT http://localhost:3001/BidItems/update/632db4219e81d8ca54a77227
 Content-Type: application/json
 
 {
-	"currentBid": 10
+	"bids": {"name": "Test", "bid": 300}
 }
