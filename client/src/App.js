@@ -41,13 +41,17 @@ function App() {
 
   const placeBid = (bid, setBid, bidder, setBidder) => {
     const currentBid = currentItem.currentBid;
-    if (bid > 1000) {
-      alert("Please enter an amount under $1000");
+    if (typeof bidder === 'string' && bidder.trim().length === 0){
+      alert("Please enter a name");
       setBid("");
+  } else if (bid > 1000) {
+        alert("Please enter an amount under $1000");
+        setBid("");
+        setBidder("")
     } else if (bid > currentBid) {
       axios
         .put(`${api_base}/BidItems/update/${currentItem.id}`, {
-          bids: {name:bidder, bid:bid}
+          bids: {name:bidder.trim(), bid:bid}
         })
         .then(() => closeModal(setBid, setBidder))
         .then(() => getBidItems())
