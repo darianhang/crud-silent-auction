@@ -65,10 +65,15 @@ function App() {
   }
 
   const openModal = (id, itemName, itemDescription, img, currentBidAmount, currentBids) => {
-    console.log(bidItems.data[0].bids[0].bid)
     setShowModal(true);
     document.body.style.overflow = 'hidden'
-    const bids = currentBids.slice(0).reverse().map((x) => {return (<p key={x._id}>{x.name} - {x.bid}</p>)})
+    let bids
+    try {
+      bids = currentBids.slice(0).reverse().map((x) => {return (<p key={x._id}>{x.name} - {x.bid}</p>)})
+    }
+    catch {
+      bids = 0
+    }
     setCurrentItem({
       id: id,
       itemName: itemName,
