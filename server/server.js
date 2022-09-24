@@ -47,20 +47,10 @@ app.put('/BidItems/update/:id', async (req, res) => {
 	})
 
 
-app.delete('/todo/delete/:id', async (req, res) => {
-	const result = await Todo.findByIdAndDelete(req.params.id);
+app.delete('/bidItems/delete/:id', async (req, res) => {
+	const result = await BidItem.findByIdAndDelete(req.params.id);
 
 	res.json({result});
 });
 
-app.get('/todo/complete/:id', async (req, res) => {
-	const todo = await Todo.findById(req.params.id);
-
-	todo.complete = !todo.complete;
-
-	todo.save();
-
-	res.json(todo);
-})
- 
 app.listen(process.env.PORT || 3001);
