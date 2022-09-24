@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import NavBar from "./components/navbar"
 import PropTypes from "prop-types"
 // const api_base = "http://localhost:3001";
-const api_base = "https://gensler-silent-auction.herokuapp.com";
+const api_base = "https://crud-silent-auction.herokuapp.com";
 
 function App() {
 
