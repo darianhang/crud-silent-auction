@@ -6,7 +6,6 @@ import { BidModal, AnimatePresense } from "./components/bid-modal";
 import Splash from "./components/splash";
 import { motion, AnimatePresence } from "framer-motion"
 import NavBar from "./components/navbar"
-import PropTypes from "prop-types"
 // const api_base = "http://localhost:3001";
 const api_base = "https://crud-silent-auction.herokuapp.com";
 

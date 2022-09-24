@@ -18,8 +18,8 @@ POST https://crud-silent-auction.herokuapp.com/BidItems/new
 Content-Type: application/json
 
 {
-	"itemName": "Some Pots",
-	"img": "https://res.cloudinary.com/df5etts2d/image/upload/v1663688298/tom-crew-oiZAQvxTcYQ-unsplash_wd5kiv.jpg",
+	"itemName": "Paint on Paper",
+	"img": "https://res.cloudinary.com/df5etts2d/image/upload/v1664003024/IT%20Updates/sheldon-liu-FrQKfzoTgsw-unsplash_zmp31o.jpg",
 	"itemDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla est ullamcorper eget nulla facilisi etiam.\n\nQuis lectus nulla at volutpat diam ut venenatis tellus. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum. Tincidunt id aliquet risus feugiat. Tempus egestas sed sed risus. Sit amet purus gravida quis blandit turpis cursus.\n\nVel eros donec ac odio. Odio ut enim blandit volutpat maecenas. Gravida rutrum quisque non tellus. Tellus id interdum velit laoreet id donec ultrices tincidunt arcu. Egestas dui id ornare arcu odio ut sem nulla pharetra. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus."
 }
 

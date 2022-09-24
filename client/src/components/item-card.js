@@ -21,7 +21,8 @@ export default function ItemCard({
 
   return (
     <div className="card">
-      <img className="item-img" src={img}></img>
+      <div className="img-container" style={{backgroundImage: `url(${img})`}}>
+      </div>
       <div className="item-details">
         <div>
           <h2 className="item-name">{itemName}</h2>
