@@ -27,7 +27,8 @@ function App() {
 
   useEffect(() => {
     getBidItems();
-  }, [bidItems]);
+    console.log("hello")
+  }, [0]);
 
   function toggleScrollOn() {
     document.body.style.overflow = 'scroll'
