@@ -40,7 +40,10 @@ function App() {
 
   const placeBid = (bid, setBid, bidder, setBidder) => {
     const currentBid = currentItem.currentBid;
-    if (typeof bidder === 'string' && bidder.trim().length === 0){
+    if (bid % 1 !== 0) {
+      alert("Sorry, whole numbers only.")
+    }
+    else if (typeof bidder === 'string' && bidder.trim().length === 0){
       alert("Please enter a name");
       setBid("");
   } else if (bid > 1000) {
