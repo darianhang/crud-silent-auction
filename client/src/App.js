@@ -70,6 +70,7 @@ function App() {
   const closeModal = (setBid, setBidder) => {
     setShowModal(false)
     document.body.style.overflow = 'scroll'
+    document.body.style.touchAction = "auto"
     setBid("")
     setBidder("")
   }
@@ -77,6 +78,7 @@ function App() {
   const openModal = (id, itemName, itemDescription, img, currentBidAmount, currentBids) => {
     setShowModal(true);
     document.body.style.overflow = 'hidden'
+    document.body.style.touchAction = "none"
     let bids
     try {
       bids = currentBids.slice(0).reverse().map((x) => {return (<p key={x._id}>{x.name} - {x.bid}</p>)})
