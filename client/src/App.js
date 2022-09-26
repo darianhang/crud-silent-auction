@@ -81,7 +81,8 @@ function App() {
     document.body.style.touchAction = "none"
     let bids
     try {
-      bids = currentBids.slice(0).reverse().map((x) => {return (<p key={x._id}>{x.name} - {x.bid}</p>)})
+      let bidsArray = currentBids.sort((a, b) => {return b.bid - a.bid})
+      bids = bidsArray.map((x) => {return (<p key={x._id}>{x.name} - {x.bid}</p>)})
     }
     catch {
       bids = 0

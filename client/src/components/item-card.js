@@ -12,9 +12,9 @@ export default function ItemCard({
   let currentBidAmount
 
   try {
-    currentBidAmount = currentBids[currentBids.length - 1].bid
-  }
-
+    let bidsArray = currentBids.map((x) => x.bid)
+    currentBidAmount = bidsArray.sort(function(a, b) {return b - a})[0]
+}
   catch {
     currentBidAmount = 0
   }
