@@ -311,6 +311,10 @@ p {
 		width: 15%;
 		object-fit: contain;
 	}
+	
+	.modal-body::-webkit-scrollbar {
+		display: block;
+	  }
 
 	.nav-bar {
 		width: 100%;
@@ -446,7 +450,10 @@ p {
 			width: 10%;
 			object-fit: contain;
 		}
-	
+
+		.modal-body::-webkit-scrollbar {
+			display: block;
+		  }
 
 		.nav-bar {
 			width: 100%;
