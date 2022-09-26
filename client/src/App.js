@@ -42,16 +42,15 @@ function App() {
     const currentBid = currentItem.currentBid;
     if (typeof bidder === 'string' && bidder.trim().length === 0){
       alert("Please enter a name");
-      setBid("");
+      setBidder("")
     }else if (bidder.length > 25){
-        alert("Please enter a name");
-        setBid("");
+        alert("Name is too long.");
+        setBidder("")
     }else if (bid % 1 !== 0) {
         alert("Sorry, whole numbers only.")
       }else if (bid > 1000) {
           alert("Please enter an amount under $1000");
           setBid("");
-          setBidder("")
         }else if (bid > currentBid) {
           axios
             .put(`${api_base}/BidItems/update/${currentItem.id}`, {
@@ -61,9 +60,9 @@ function App() {
             .then(() => getBidItems())
             .catch((err) => console.error("Error: ", err));
           } else {
-            alert("Please enter a higher amount than the current bid");
-            setBid("");
-          }
+              alert("Please enter a higher amount than the current bid");
+              setBid("");
+            }
   };
 
   const closeModal = (setBid, setBidder) => {
