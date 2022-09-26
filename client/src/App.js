@@ -31,11 +31,13 @@ function App() {
 
   function toggleScrollOn() {
     document.body.style.overflow = 'scroll'
+    document.html.style.overflow = 'scroll'
     setShowSplash(false)
   }
 
   function toggleScrollOff() {
     document.body.style.overflow = 'hidden'
+    document.html.style.overflow = 'scroll'
   }
 
   const placeBid = (bid, setBid, bidder, setBidder) => {
