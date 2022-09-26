@@ -40,28 +40,30 @@ function App() {
 
   const placeBid = (bid, setBid, bidder, setBidder) => {
     const currentBid = currentItem.currentBid;
-    if (bid % 1 !== 0) {
-      alert("Sorry, whole numbers only.")
-    }
-    else if (typeof bidder === 'string' && bidder.trim().length === 0){
+    if (typeof bidder === 'string' && bidder.trim().length === 0){
       alert("Please enter a name");
       setBid("");
-  } else if (bid > 1000) {
-        alert("Please enter an amount under $1000");
+    }else if (bidder.length > 25){
+        alert("Please enter a name");
         setBid("");
-        setBidder("")
-    } else if (bid > currentBid) {
-      axios
-        .put(`${api_base}/BidItems/update/${currentItem.id}`, {
-          bids: {name:bidder.trim(), bid:bid}
-        })
-        .then(() => closeModal(setBid, setBidder))
-        .then(() => getBidItems())
-        .catch((err) => console.error("Error: ", err));
-    } else {
-      alert("Please enter a higher amount than the current bid");
-      setBid("");
-    }
+    }else if (bid % 1 !== 0) {
+        alert("Sorry, whole numbers only.")
+      }else if (bid > 1000) {
+          alert("Please enter an amount under $1000");
+          setBid("");
+          setBidder("")
+        }else if (bid > currentBid) {
+          axios
+            .put(`${api_base}/BidItems/update/${currentItem.id}`, {
+            bids: {name:bidder.trim(), bid:bid}
+          })
+            .then(() => closeModal(setBid, setBidder))
+            .then(() => getBidItems())
+            .catch((err) => console.error("Error: ", err));
+          } else {
+            alert("Please enter a higher amount than the current bid");
+            setBid("");
+          }
   };
 
   const closeModal = (setBid, setBidder) => {
