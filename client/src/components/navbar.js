@@ -12,7 +12,7 @@ export default function NavBar() {
             >
                 <div className="nav-bar">
                     <div className="pseudo"></div>
-                    <img className="nav-img" src="https://res.cloudinary.com/df5etts2d/image/upload/v1663618941/Untitled-1_pmjsvt.png"></img>
+                    <img className="nav-img" src="https://res.cloudinary.com/df5etts2d/image/upload/v1664317138/logo_fuhhkx.png"></img>
                     <a href="https://my-site-102728-103753.square.site/">
                         <button className="donate-button">Donate</button>
                     </a>

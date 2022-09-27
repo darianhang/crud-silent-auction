@@ -33,7 +33,9 @@ export function BidModal({ prevBidders, handleClick, showModal, itemName, itemDe
               <div className="current-bid">Current bid: ${currentBid}</div>
             </header>
             <div className="modal-body">
+              <div className="modal-img-container">
               <img className="modal-item-img" src={img}></img>
+              </div>
               <p>{itemDescription}</p>
             </div>
               <h3 className="bids-title">Previous bids:</h3>

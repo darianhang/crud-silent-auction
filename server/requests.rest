@@ -6,22 +6,22 @@ POST https://crud-silent-auction.herokuapp.com/BidItems/new
 Content-Type: application/json
 
 {
-	"itemName": "Rainbow Heads",
-	"img": "https://res.cloudinary.com/df5etts2d/image/upload/v1663688298/leeann-cline-I2RnOO8ojQ4-unsplash_egh3sj.jpg",
-	"itemDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla est ullamcorper eget nulla facilisi etiam.\n\nQuis lectus nulla at volutpat diam ut venenatis tellus. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum. Tincidunt id aliquet risus feugiat. Tempus egestas sed sed risus. Sit amet purus gravida quis blandit turpis cursus.\n\nVel eros donec ac odio. Odio ut enim blandit volutpat maecenas. Gravida rutrum quisque non tellus. Tellus id interdum velit laoreet id donec ultrices tincidunt arcu. Egestas dui id ornare arcu odio ut sem nulla pharetra. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus."
+	"itemName": "Fluffy Portrait",
+	"img": "https://res.cloudinary.com/df5etts2d/image/upload/v1664307707/Silent%20Auction/Sisley_OrangeShirtDay_behm1z.png",
+	"itemDescription": "Donated by Sisley Hu \n\n Quis lectus nulla at volutpat diam ut venenatis tellus. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum. Tincidunt id aliquet risus feugiat. Tempus egestas sed sed risus. Sit amet purus gravida quis blandit turpis cursus.\n\nVel eros donec ac odio. Odio ut enim blandit volutpat maecenas. Gravida rutrum quisque non tellus. Tellus id interdum velit laoreet id donec ultrices tincidunt arcu. Egestas dui id ornare arcu odio ut sem nulla pharetra. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus."
 }
 
 ###
-
+                 
 
 POST https://crud-silent-auction.herokuapp.com/BidItems/new
 Content-Type: application/json
 
 {
-	"itemName": "Paint on Paper",
-	"img": "https://res.cloudinary.com/df5etts2d/image/upload/v1664003024/IT%20Updates/sheldon-liu-FrQKfzoTgsw-unsplash_zmp31o.jpg",
-	"itemDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla est ullamcorper eget nulla facilisi etiam.\n\nQuis lectus nulla at volutpat diam ut venenatis tellus. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum. Tincidunt id aliquet risus feugiat. Tempus egestas sed sed risus. Sit amet purus gravida quis blandit turpis cursus.\n\nVel eros donec ac odio. Odio ut enim blandit volutpat maecenas. Gravida rutrum quisque non tellus. Tellus id interdum velit laoreet id donec ultrices tincidunt arcu. Egestas dui id ornare arcu odio ut sem nulla pharetra. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus."
-}
+	"itemName": "The Artist Cookbook",
+	"img": "https://res.cloudinary.com/df5etts2d/image/upload/v1664307707/Silent%20Auction/ML550098-2_eypfrn.jpg",
+	"itemDescription": "Donated by Carrie Perreault\n\nThe Artist Cookbook Vol. 1 contains 58 recipes, from 52 artists collected from across the country.\n\nAlong with the recipes artists submitted, came personal stories and unexpected glimpses into each of their lives. Some of those narratives made their way into the book.\n\n
+}       
 
 ###
 

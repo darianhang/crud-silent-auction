@@ -63,6 +63,7 @@ function App() {
             .catch((err) => console.error("Error: ", err));
           } else {
               alert("Please enter a higher amount than the current bid");
+              console.log(currentBid)
               setBid("");
             }
   };

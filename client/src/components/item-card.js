@@ -13,11 +13,11 @@ export default function ItemCard({
 
   try {
     let bidsArray = currentBids.map((x) => x.bid)
-    currentBidAmount = bidsArray.sort(function(a, b) {return b - a})[0]
+    currentBidAmount = bidsArray.sort(function(a, b) {return b - a})[0] || 0
 }
   catch {
     currentBidAmount = 0
-  }
+  }    
 
   return (
     <div className="card">
