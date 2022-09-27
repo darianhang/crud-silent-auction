@@ -500,9 +500,9 @@ p {
 		.bid-modal {
 			z-index: 1;
 			position: fixed;
-			height: 80%;
+			height: 82%;
 			margin: 5% 0 15% 0;
-			width: 80vw;
+			width: 90vw;
 			background-color: white;
 			padding: 5%;
 			display: flex;
