@@ -50,6 +50,7 @@ function App() {
         setBidder("")
     }else if (bid % 1 !== 0) {
         alert("Sorry, whole numbers only.")
+        setBid("")
       }else if (bid > 1000) {
           alert("Please enter an amount under $1000");
           setBid("");
