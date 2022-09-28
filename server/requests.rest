@@ -18,9 +18,9 @@ POST https://crud-silent-auction.herokuapp.com/BidItems/new
 Content-Type: application/json
 
 {
-	"itemName": "The Artist Cookbook",
-	"img": "https://res.cloudinary.com/df5etts2d/image/upload/v1664307707/Silent%20Auction/ML550098-2_eypfrn.jpg",
-	"itemDescription": "Donated by Carrie Perreault\n\nThe Artist Cookbook Vol. 1 contains 58 recipes, from 52 artists collected from across the country.\n\nAlong with the recipes artists submitted, came personal stories and unexpected glimpses into each of their lives. Some of those narratives made their way into the book.\n\n
+	"itemName": "Painting",
+	"img": "https://res.cloudinary.com/df5etts2d/image/upload/v1664329210/Silent%20Auction/PC-01_rii3n0.jpg",
+	"itemDescription": "Donated by Ayxa Sartorio"
 }       
 
 ###
