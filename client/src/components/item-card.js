@@ -21,7 +21,7 @@ export default function ItemCard({
 
   return (
     <div className="card">
-      <div className="img-container" style={{backgroundImage: `url(${img})`}}>
+      <div className="img-container" onClick={() => handleClick(id, itemName, itemDescription, img, currentBidAmount, currentBids)} style={{backgroundImage: `url(${img})`}}>
       </div>
       <div className="item-details">
         <div>
