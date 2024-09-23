@@ -7,7 +7,7 @@ import Splash from "./components/splash";
 import { motion, AnimatePresence } from "framer-motion"
 import NavBar from "./components/navbar"
 // const api_base = "http://localhost:3001";
-const api_base = "https://crud-silent-auction.onrender.com/";
+const api_base = "https://crud-silent-auction.onrender.com";
 
 function App() {
 
