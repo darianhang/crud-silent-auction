@@ -5,7 +5,7 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <div>Auction Over</div>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
